@@ -1,0 +1,83 @@
+<!-- Floating Action Button -->
+<button
+  id="chat-fab"
+  type="button"
+  aria-label="Toggle chat"
+  (click)="toggleChat()"
+>
+  💬
+</button>
+
+<!-- Chat Panel -->
+<div
+  id="chat-panel"
+  *ngIf="isOpen"
+  aria-hidden="false"
+  
+>
+  <div class="chat-header">
+    <div class="chat-title">Ask about Raghuveer</div>
+    <button
+      id="chat-close"
+      type="button"
+      aria-label="Close chat"
+      (click)="closeChat()"
+    >
+      ✕
+    </button>
+  </div>
+
+  <div #messagesEl id="chat-messages" class="chat-messages">
+    <div
+      *ngFor="let m of messages"
+      class="chat-bubble"
+      [ngClass]="m.role === 'user' ? 'chat-user' : 'chat-assistant'"
+    >
+      {{ m.content }}
+    </div>
+  </div>
+
+  <div class="chat-suggestions">
+    <button
+      type="button"
+      class="chat-chip"
+      (click)="quickSend('Give me a quick intro about you.')"
+    >
+      Quick intro
+    </button>
+    <button
+      type="button"
+      class="chat-chip"
+      (click)="quickSend('What are your best projects?')"
+    >
+      Projects
+    </button>
+    <button
+      type="button"
+      class="chat-chip"
+      (click)="quickSend('Tell me about your experience and tech stack.')"
+    >
+      Experience
+    </button>
+    <button
+      type="button"
+      class="chat-chip"
+      (click)="quickSend('How can I contact you?')"
+    >
+      Contact
+    </button>
+  </div>
+
+  <form class="chat-input-row" (submit)="onSubmit($event)">
+    <input
+      id="chat-input"
+      name="chatInput"
+      type="text"
+      [value]="draft"
+      (input)="draft = ($any($event.target).value || '')"
+      placeholder="Ask something..."
+      autocomplete="off"
+    />
+    <button id="chat-send" type="submit">Send</button>
+  </form>
+</div>

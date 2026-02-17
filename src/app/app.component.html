@@ -1,0 +1,269 @@
+<!-- Header and Navigation -->
+<header class="site-header">
+  <div class="container header-container">
+    <div class="brand">
+      <div class="logo-circle">
+        <span class="logo-text">RD</span>
+      </div>
+      <span class="brand-name">{{ data.person.name }}</span>
+    </div>
+
+    <nav class="main-nav" [class.open]="navOpen">
+      <ul>
+        <li><a href="#home" (click)="closeNav()">Home</a></li>
+        <li><a href="#about" (click)="closeNav()">About</a></li>
+        <li><a href="#experience" (click)="closeNav()">Experience</a></li>
+        <li><a href="#projects" (click)="closeNav()">Projects</a></li>
+        <li><a href="#skills" (click)="closeNav()">Skills</a></li>
+        <li><a href="#achievements" (click)="closeNav()">Achievements</a></li>
+        <li><a href="#contact" (click)="closeNav()">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle" (click)="toggleTheme()">
+        <i class="fas" id="theme-icon" data-dark-icon="fa-moon" data-light-icon="fa-sun"></i>
+      </button>
+      <button class="nav-toggle" aria-label="Toggle navigation" (click)="toggleNav()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <div class="hero-profile">
+      <img src="assets/profile.jpg" alt="Profile picture of Raghuveer Draksharam" />
+    </div>
+    <h1 class="hero-name">{{ data.person.name }}</h1>
+
+    <div class="hero-info-box">
+      <p class="hero-tagline">{{ data.person.tagline }}</p>
+      <p class="hero-description">Building intelligent solutions and automating the future, one line of code at a time</p>
+    </div>
+
+    <div class="hero-buttons">
+      <a class="btn social-btn" href="https://www.linkedin.com/in/raghuveer-draksharam/" target="_blank">
+        <i class="fab fa-linkedin-in"></i> LinkedIn
+      </a>
+      <a class="btn social-btn" href="https://github.com/raghuveer88" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a class="btn social-btn" href="https://www.instagram.com/raghuveerdraksharam/" target="_blank">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a class="btn social-btn" href="https://leetcode.com/u/Raghuveer_Draksharam/" target="_blank">
+        <i class="fas fa-code"></i> LeetCode
+      </a>
+      <button class="btn social-btn chat-cta-btn" type="button" (click)="openChatFromHero()">
+        <i class="fas fa-robot"></i> Talk to my AI Twin 🤖
+      </button>
+
+    </div>
+
+    <a href="#about" class="btn explore-btn">Explore My Work <i class="fas fa-chevron-down"></i></a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section about-section fade-in-section">
+  <div class="container">
+    <h2>About Me</h2>
+    <p class="section-subtitle">Driven by curiosity and powered by code</p>
+    <div class="about-content">
+      <div class="about-left slide-left">
+        <p class="about-summary">
+          I am currently pursuing a Master’s degree in Computer Science at Stony Brook University with a strong
+          foundation in software engineering, data science and AI/ML. My passion lies in building real‑world
+          applications that make a difference, from conversational AI agents to dynamic full‑stack platforms.
+          Combining curiosity with a commitment to continuous learning, I strive to create systems that not only
+          work efficiently but also improve themselves over time.
+        </p>
+
+        <div class="education">
+          <h3>Education</h3>
+          <div class="education-list">
+            <div class="education-item">
+              <div class="edu-details">
+                <div class="edu-title">SUNY Stony Brook University</div>
+                <div>Master of Science – Computer Science, Stony Brook, NY</div>
+              </div>
+            </div>
+            <div class="education-item">
+              <div class="edu-details">
+                <div class="edu-title">Mahindra University</div>
+                <div>Bachelor of Technology – Computer Science and Engineering, Hyderabad, India</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-right slide-right">
+        <div class="highlight-card highlight-blue">
+          <div class="highlight-icon"><i class="fas fa-bolt"></i></div>
+          <h3>Innovation Focus</h3>
+          <p>
+            Architecting cutting‑edge AI agents and automation tools that streamline workflows and enhance user
+            experiences by leveraging emerging technologies.
+          </p>
+        </div>
+        <div class="highlight-card highlight-green">
+          <div class="highlight-icon"><i class="fas fa-heart"></i></div>
+          <h3>Passion Projects</h3>
+          <p>
+            From geospatial analysis to voice assistants and robotics, I enjoy tackling diverse challenges that
+            push the boundaries of technology and deliver measurable impact.
+          </p>
+        </div>
+        <div class="highlight-card highlight-purple">
+          <div class="highlight-icon"><i class="fas fa-infinity"></i></div>
+          <h3>Continuous Learning</h3>
+          <p>
+            Always exploring new technologies and methodologies to stay at the forefront of software development,
+            AI/ML and data science.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="section experience-section fade-in-section">
+  <div class="container">
+    <h2>Experience</h2>
+    <p class="section-subtitle">Building innovative solutions and driving measurable impact</p>
+
+    <div class="experience-timeline">
+      <div
+        class="experience-item slide-left"
+        *ngFor="let exp of data.experiences; let i = index"
+        [ngClass]="expBorderClasses[i % expBorderClasses.length]">
+        <div class="timeline-dot"></div>
+        <div class="experience-card">
+          <h3 class="experience-role">{{ exp.role }}</h3>
+          <span class="experience-company">{{ exp.company }}</span>
+          <span class="experience-period">{{ exp.period }}</span>
+          <p class="experience-location">{{ exp.location }}</p>
+          <ul>
+            <li *ngFor="let a of exp.achievements">{{ a }}</li>
+          </ul>
+          <div class="tech-tags">
+            <span class="tech-tag" *ngFor="let t of exp.technologies">{{ t }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section projects-section fade-in-section">
+  <div class="container">
+    <h2>Projects</h2>
+    <p class="section-subtitle">Building innovative solutions across AI/ML, web development and robotics</p>
+
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of data.projects">
+        <img class="project-image" [src]="project.image" [alt]="project.name + ' image'">
+        <div class="project-content">
+          <div class="project-meta">
+            <span class="project-date">{{ project.date }}</span>
+            <span class="project-award" *ngIf="project.award">{{ project.award }}</span>
+          </div>
+          <h3>{{ project.name }}</h3>
+          <p>{{ project.description }}</p>
+          <div class="tech-tags">
+            <span class="tech-tag" *ngFor="let t of project.technologies">{{ t }}</span>
+          </div>
+
+          <div class="project-actions" *ngIf="project.repo">
+            <a class="btn social-btn" target="_blank" [href]="project.repo">
+              <i class="fab fa-github"></i> View Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="section skills-section fade-in-section">
+  <div class="container">
+    <h2>Technical Skills</h2>
+    <p class="section-subtitle">Comprehensive toolkit for building modern, scalable applications</p>
+
+    <div class="skills-grid">
+      <div
+        class="skill-category"
+        *ngFor="let cat of data.skills; let i = index"
+        [ngClass]="skillCatClasses[i % skillCatClasses.length]">
+        <h3>{{ cat.category }}</h3>
+        <div class="skill-tags">
+          <span class="skill-tag" *ngFor="let item of cat.items">{{ item }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Achievements Section -->
+<section id="achievements" class="section achievements-section fade-in-section">
+  <div class="container">
+    <h2>Achievements</h2>
+    <div class="achievements-grid">
+      <div class="achievement-card" *ngFor="let a of data.achievements">
+        <div class="achievement-icon"><i class="fas {{ a.icon }}"></i></div>
+        <h3>{{ a.title }}</h3>
+        <span class="achievement-result">{{ a.result }}</span>
+        <p>{{ a.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="section contact-section fade-in-section">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <p class="contact-intro">
+      I’m always open to discussing new opportunities or collaborations. Feel free to reach out via email or connect
+      with me on LinkedIn.
+    </p>
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:sdraksharam&#64;cs.stonybrook.edu">sdraksharam&#64;cs.stonybrook.edu</a>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <a href="tel:+17138060579">+1 (713) 806‑0579</a>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Stony Brook, NY, USA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-content">
+    <p id="footer-text">© {{ year }} {{ data.person.name }}. All rights reserved.</p>
+    <div class="footer-socials">
+      <a href="https://www.linkedin.com/in/raghuveer-draksharam/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/raghuveer88" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://www.instagram.com/raghuveerdraksharam/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://leetcode.com/u/Raghuveer_Draksharam/" target="_blank"><i class="fas fa-code"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Chat widget -->
+<app-chat-widget></app-chat-widget>

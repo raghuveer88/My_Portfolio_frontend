@@ -1,0 +1,56 @@
+Sundara Raghuveer Draksharam
+713-806-0579 | sdraksharam@cs.stonybrook.edu | LinkedIn | GitHub
+Education
+SUNY Stony Brook University Stony Brook, NY
+Master of Science - Computer Science — GPA: 3.78/4 Aug. 2024 – May 2026
+Mahindra University Hyderabad, India
+Bachelor of Technology - Computer Science and Engineering — GPA: 8.6/10 Aug. 2018 – May 2022
+Experience
+Kloudspot July 2025 – Aug 2025
+Intern Sunnyvale, CA
+• Built a model to estimate the hardware needed for camera deployments (CPU cores, Memory, GPU tier) from camera count
+and analytics configuration (e.g., facial detection, tracking, object detection ).
+• Used a formula-based baseline for initial estimates, then trained LightGBM on benchmark results and past deployments to
+adjust for real-world behavior; shipped via FastAPI and integrated into the Angular UI.
+Clarivate Jan 2022 – June 2022
+Machine Learning Intern Noida, India
+• Developed an end-to-end multi-label patent classification pipeline for 5,000+ patents, reducing manual tagging effort by
+14 hours a week per employee.
+• Created preprocessing and labeling workflows in Pandas and PyTorch to clean/normalize patent text and transform existing
+patent code assignments into multi-label training targets.
+• Fine-tuned BERT-base and benchmarked against TF-IDF + linear/KNN baselines; reached 0.89 micro-F1, with additional
+gains from cross-validation and hyperparameter tuning.
+ADP, Inc. July 2022 – July 2024
+Software Engineer Hyderabad, India
+• Designed and built a full-stack client onboarding application with a metadata-driven UI that dynamically renders
+questions based on country-specific requirements and client configuration.
+• Developed the front end in Angular and integrated with Spring Boot APIs and MySQL to support configurable workflows
+and real-time validation.
+• Reduced onboarding turnaround by ˜66% by centralizing requirement gathering into a metadata-driven flow that adapts forms
+and validations per client.
+• Worked in an Agile setup using Git, Jira, and CI/CD pipelines to ship and iterate on features collaboratively.
+Technical Skills
+Languages: Python, TypeScript, Java, JavaScript, C, HTML/CSS, SQL, Go
+DevOps and Others: Git, AWS (SageMaker, Bedrock), Shell Scripting, CI/CD, MLOps, Agile, Kubernetes, Jira
+Artificial Intelligence: Scikit-learn, PyTorch, NumPy, Pandas, Transformers, MCP Servers, LLMs, LangChain, Vector Databases
+Courses: Artificial Intelligence, Machine Learning, Data Science Fundamentals, Computer Vision, Natural Language Processing,
+Data Structures and Algorithms, Computer Networks, Distributed Systems, Software Engineering.
+Projects
+AI Knowledge Worker (RAG Assistant) | LangChain, OpenAI, ChromaDB, HuggingFace Embeddings, Gradio
+• Built a RAG-based document assistant that ingests company documents, generates embeddings, and stores them in a
+Chroma vector database for similarity-based retrieval.
+• Implemented chunking, retrieval pipeline, and prompt-grounded generation to answer user questions with document context
+via a Gradio chat interface.
+LLM Fine-Tuned Price Prediction | Python, PyTorch, Transformers, HuggingFace, QLoRA
+• Fine-tuned Llama-3.2-3B to predict product prices from short descriptions using a 200K-item dataset, with a
+prompt–completion training pipeline and parameter-efficient tuning (QLoRA).
+• Built data preprocessing, tokenization, and evaluation workflows to compare the fine-tuned model’s predictions against
+baseline frontier-model outputs.
+Jokes Meet AI: Humor Clustering & Classification | Data Science Course Project, HDBSCAN, UMAP
+• Built an NLP pipeline to embed 1M+ jokes with Sentence-BERT and discover humor groupings using HDBSCAN, with
+preprocessing (tokenization, lemmatization, normalization) to improve text quality.
+• Reduced embedding space with UMAP to surface 15 humor categories, then benchmarked KNN/SVM/LightGBM and
+improved classification with a fine-tuned DistilBERT model (83.1% accuracy).
+EXTRA CURRICULAR ACTIVITIES
+• National Level U-16 Cricket Player: Represented Andhra Pradesh in U-16 national tournaments for two consecutive years
+(2015–2016).
