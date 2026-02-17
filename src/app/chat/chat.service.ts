@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
 import { ChatMessage } from './chat.types';
+import { environment } from 'src/environments/environment';
 
 export interface ChatResponse {
   reply: string;
@@ -11,7 +12,7 @@ export interface ChatResponse {
 export class ChatService {
   // Local dev: Flask running on :5000
   // Production: point this to your deployed backend
-  apiUrl = 'https://my-portfolio-backend-n1iv.onrender.com/api/chat';
+  private readonly apiUrl = `${environment.apiBase}/api/chat`;
 
   constructor(private http: HttpClient) {}
 
