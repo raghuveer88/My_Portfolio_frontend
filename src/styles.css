@@ -398,7 +398,8 @@ body {
 }
 .explore-btn {
     background-image: var(--accent-gradient);
-    color: #fff;
+    /* color: #fff; */
+    color: #05162c;
 }
 .explore-btn:hover {
     opacity: 0.9;
