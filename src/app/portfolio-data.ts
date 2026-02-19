@@ -80,7 +80,8 @@ export const PORTFOLIO = {
       'Built a RAG-based document assistant that ingests company docs, generates embeddings, and stores them in ChromaDB for similarity-based retrieval. Implemented chunking, retrieval, and prompt-grounded generation to answer questions with document context via a Gradio chat UI.',
     technologies: ['Python', 'LangChain', 'OpenAI API', 'ChromaDB', 'HuggingFace Embeddings', 'Gradio'],
     award: 'Personal Project',
-    image: 'assets/rag_img.png'
+    image: 'assets/rag_img.png',
+    repo: 'https://github.com/raghuveer88/RAG_for_documents'
   },
   {
     name: 'LLM Fine-Tuned Price Prediction',
@@ -89,7 +90,8 @@ export const PORTFOLIO = {
       'Fine-tuned Llama-3.2-3B to predict product prices from short descriptions using a 200K-item dataset with a prompt–completion training pipeline and QLoRA. Built preprocessing, tokenization, and evaluation workflows to compare fine-tuned outputs against baseline frontier-model predictions.',
     technologies: ['Python', 'PyTorch', 'Transformers', 'HuggingFace', 'QLoRA', 'Llama-3.2-3B'],
     award: 'Course Project',
-    image: 'assets/fine_tune_llm.png'
+    image: 'assets/fine_tune_llm.png',
+    repo: 'https://github.com/raghuveer88/QLORA-Price-prredictor'
   },
   {
     name: 'Jokes Meet AI',
