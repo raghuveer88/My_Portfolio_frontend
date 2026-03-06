@@ -37,15 +37,13 @@ export const PORTFOLIO = {
   experiences: [
     {
     company: 'Kloudspot',
-    role: 'Intern',
+    role: 'Machine Learning Engineer Intern',
     location: 'Sunnyvale, CA',
     period: 'Jun 2025 – Jul 2025',
     achievements: [
-      'Built a model to estimate hardware requirements for camera deployments (CPU cores, memory, GPU tier) based on camera count and analytics configuration (e.g., facial detection, tracking, object detection).',
-      'Started with a formula-based baseline for initial estimates, then trained LightGBM on benchmark results and past deployments to adjust for real-world behavior.',
-      'Shipped the estimator as a FastAPI service and integrated it into the Angular UI for internal use.'
+      
     ],
-    technologies: ['Python', 'LightGBM', 'FastAPI', 'Angular']
+    technologies: ['Python', 'LightGBM', 'FastAPI', 'Angular', 'MLflow', 'GitHub Actions', 'Machine Learning']
   },
   {
     company: 'Clarivate',
@@ -53,11 +51,9 @@ export const PORTFOLIO = {
     location: 'Noida, India',
     period: 'Jan 2022 – Jun 2022',
     achievements: [
-      'Developed an end-to-end multi-label patent classification pipeline for 5,000+ patents, reducing manual tagging effort by ~14 hours/week per employee.',
-      'Built preprocessing and labeling workflows using Pandas and PyTorch to clean/normalize patent text and convert existing patent codes into multi-label targets.',
-      'Fine-tuned BERT-base and benchmarked against TF-IDF + linear/KNN baselines, achieving 0.89 micro-F1 with additional gains from cross-validation and hyperparameter tuning.'
+
     ],
-    technologies: ['Python', 'Pandas', 'PyTorch', 'BERT']
+    technologies: ['Python', 'Pandas', 'PyTorch', 'BERT', 'Transformers']
   },
   {
     company: 'ADP, Inc.',
@@ -65,11 +61,9 @@ export const PORTFOLIO = {
     location: 'Hyderabad, India',
     period: 'Jul 2022 – Jul 2024',
     achievements: [
-      'Designed and built a full-stack client onboarding application with a metadata-driven UI that dynamically renders questions based on country-specific requirements and client configuration.',
-      'Developed the front end in Angular and integrated with Spring Boot APIs and MySQL to support configurable workflows and real-time validation.',
-      'Reduced onboarding turnaround by ~66% by centralizing requirement gathering into a metadata-driven flow that adapts forms and validations per client.'
+
     ],
-    technologies: ['Angular', 'Spring Boot', 'MySQL', 'Git', 'Jira', 'CI/CD']
+    technologies: ['Angular','python', 'Spring Boot', 'MySQL', 'Git', 'Jira', 'CI/CD']
   }
   ] as Experience[],
   projects: [
