@@ -39,7 +39,7 @@ export const PORTFOLIO = {
     company: 'Kloudspot',
     role: 'Machine Learning Engineer Intern',
     location: 'Sunnyvale, CA',
-    period: 'Jun 2025 – Jul 2025',
+    period: 'May 2025 – Aug 2025',
     achievements: [
       
     ],
