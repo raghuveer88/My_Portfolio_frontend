@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Project thumbnails preview</title>
+<style>
+  :root{
+    --bg:#0a1120; --card:#111a2e; --line:#20304d; --text:#e7edf7; --muted:#8ea2c4; --tag:#1b2942;
+  }
+  body.light{
+    --bg:#f5f7fb; --card:#ffffff; --line:#e6eaf1; --text:#0f172a; --muted:#5b6b86; --tag:#eef2f8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;transition:background .25s}
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 32px;position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:5}
+  h1{font-size:20px;margin:0;font-weight:700;letter-spacing:-.01em}
+  .toggle{border:1px solid var(--line);background:var(--card);color:var(--text);padding:9px 16px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;padding:32px;max-width:1160px;margin:0 auto}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .card img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover}
+  .body{padding:16px 18px 20px}
+  .row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+  .year{color:#3b82f6;font-weight:700;font-size:14px}
+  .tag{background:var(--tag);color:var(--muted);font-size:12px;font-weight:600;padding:5px 10px;border-radius:999px}
+  .name{font-size:17px;font-weight:700;margin:0;letter-spacing:-.01em}
+</style>
+</head>
+<body>
+<header>
+  <h1>Project thumbnails — mode preview</h1>
+  <button class="toggle" onclick="document.body.classList.toggle('light')">Toggle light / dark</button>
+</header>
+<div class="grid" id="grid"></div>
+<script>
+const items=[
+  ["asset_ai","Asset AI (Property Analytics)","2025","Personal Project"],
+  ["rag_img","AI Knowledge Worker (RAG)","2025","Personal Project"],
+  ["fine_tune_llm","LLM Fine-Tuned Price Prediction","2025","Course Project"],
+  ["jokes_meet_ai","Jokes Meet AI","2025","Data Science Course Project"],
+  ["student_faculty_form","Student-Faculty Forum & Availability","2021","Campus Project"],
+  ["bike_rental","Rental Bike Tracking System","2021","Campus Project"],
+  ["dash","Hybrid DASH + P2P Video Delivery","2025","Campus Project"],
+  ["shell_in_c","Shell in C","2025","Campus Project"],
+  ["cricket_world_cup","ICC 2019 World Cup Prediction","2019","Campus Project"],
+];
+document.getElementById('grid').innerHTML=items.map(([f,n,y,t])=>`
+  <div class="card">
+    <img src="png/${f}.png" alt="${n}"/>
+    <div class="body">
+      <div class="row"><span class="year">${y}</span><span class="tag">${t}</span></div>
+      <p class="name">${n}</p>
+    </div>
+  </div>`).join('');
+</script>
+</body>
+</html>
