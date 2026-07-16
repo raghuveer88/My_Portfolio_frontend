@@ -94,21 +94,66 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   private setupNavHighlighting(): void {
-    const navLinks = Array.from(document.querySelectorAll('.main-nav a[href^="#"]')) as HTMLAnchorElement[];
-    const sections = Array.from(document.querySelectorAll('section')) as HTMLElement[];
+    const navLinks = Array.from(
+      document.querySelectorAll('.main-nav a[href^="#"]')
+    ) as HTMLAnchorElement[];
 
-    const navObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const id = (entry.target as HTMLElement).id;
-        navLinks.forEach(link => {
-          const href = link.getAttribute('href');
-          link.classList.toggle('active-nav', href === '#' + id);
-        });
+    const sections = navLinks
+      .map(link => document.querySelector(link.getAttribute('href') || ''))
+      .filter((el): el is HTMLElement => !!el);
+
+    if (!sections.length) return;
+
+    const header = document.querySelector('.site-header') as HTMLElement | null;
+
+    const setActive = (id: string) => {
+      navLinks.forEach(link =>
+        link.classList.toggle('active-nav', link.getAttribute('href') === '#' + id)
+      );
+    };
+
+    let lockUntil = 0;   // briefly ignore scroll after a click
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      if (Date.now() < lockUntil) return;
+
+      const headerH = header ? header.offsetHeight : 0;
+      const line = window.scrollY + headerH + 20;  // detection line under the header
+
+      let currentId = sections[0].id;
+      for (const s of sections) {
+        if (s.offsetTop <= line) currentId = s.id;
+      }
+
+      // At the very bottom, force the last section (handles a short final section)
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+        currentId = sections[sections.length - 1].id;
+      }
+
+      setActive(currentId);
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    // Instant highlight on click; lock so the smooth scroll doesn't override it
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const href = link.getAttribute('href') || '';
+        setActive(href.slice(1));
+        lockUntil = Date.now() + 800;
       });
-    }, { threshold: 0.4 });
+    });
 
-    sections.forEach(section => navObserver.observe(section));
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();  // set the correct link on first load
   }
 
   private setupTouchBlurFix(): void {

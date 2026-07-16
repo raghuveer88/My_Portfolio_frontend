@@ -15,6 +15,7 @@ export interface Project {
   award?: string;
   image: string;
   repo?: string;
+  demo?: string;
 }
 
 export interface SkillCategory {
@@ -43,7 +44,7 @@ export const PORTFOLIO = {
     achievements: [
       
     ],
-    technologies: ['Python', 'LightGBM', 'FastAPI', 'Angular', 'MLflow', 'GitHub Actions', 'Machine Learning']
+    technologies: ['Python', 'FastAPI', 'Docker', 'LLMs', 'Tool Calling', 'Prompt Engineering', 'Angular']
   },
   {
     company: 'ADP, Inc.',
@@ -53,7 +54,7 @@ export const PORTFOLIO = {
     achievements: [
 
     ],
-    technologies: ['Angular','python', 'Spring Boot', 'MySQL', 'Git', 'Jira', 'CI/CD']
+    technologies: ['Python', 'Angular', 'XGBoost', 'MLflow', 'Spring Boot', 'MySQL', 'Git', 'Jira', 'CI/CD']
   },
   {
     company: 'Clarivate',
@@ -63,7 +64,7 @@ export const PORTFOLIO = {
     achievements: [
 
     ],
-    technologies: ['Python', 'Pandas', 'PyTorch', 'BERT', 'Transformers']
+    technologies: ['Python', 'PyTorch', 'Transformers', 'BERT', 'Sentence-BERT', 'FAISS', 'FastAPI', 'MLflow', 'Pandas']
   }
   
   ] as Experience[],
@@ -86,7 +87,8 @@ export const PORTFOLIO = {
     ],
     award: 'Personal Project',
     image: 'assets/files/asset_ai.png',
-    repo: 'https://github.com/raghuveer88/Asset_project'
+    repo: 'https://github.com/raghuveer88/Asset_project',
+    demo: 'https://drive.google.com/file/d/11cgC668X26dkZ8a3vmLa6AIKq5xScpRT/view?usp=sharing'
     },
     {
     name: 'AI Knowledge Worker (RAG Assistant)',

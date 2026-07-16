@@ -58,9 +58,9 @@
       <!-- <a class="btn social-btn" href="https://www.instagram.com/raghuveerdraksharam/" target="_blank">
         <i class="fab fa-instagram"></i> Instagram
       </a> -->
-      <a class="btn social-btn" href="https://leetcode.com/u/Raghuveer_Draksharam/" target="_blank">
+      <!-- <a class="btn social-btn" href="https://leetcode.com/u/Raghuveer_Draksharam/" target="_blank">
         <i class="fas fa-code"></i> LeetCode
-      </a>
+      </a> -->
       
 
     </div>
@@ -92,13 +92,21 @@
             <div class="education-item">
               <div class="edu-details">
                 <div class="edu-title">SUNY Stony Brook University</div>
-                <div>Master of Science – Computer Science, Stony Brook, NY</div>
+                <div class="edu-degree">Master of Science – Computer Science</div>
+                <div class="edu-meta">
+                  <span class="edu-location">Stony Brook, NY</span>
+                  <span class="edu-gpa">GPA 3.8 / 4.0</span>
+                </div>
               </div>
             </div>
             <div class="education-item">
               <div class="edu-details">
                 <div class="edu-title">Mahindra University</div>
-                <div>Bachelor of Technology – Computer Science and Engineering, Hyderabad, India</div>
+                <div class="edu-degree">Bachelor of Technology – Computer Science and Engineering</div>
+                <div class="edu-meta">
+                  <span class="edu-location">Hyderabad, India</span>
+                  <span class="edu-gpa">GPA 8.6 / 10</span>
+                </div>
               </div>
             </div>
           </div>
@@ -184,9 +192,12 @@
             <span class="tech-tag" *ngFor="let t of project.technologies">{{ t }}</span>
           </div>
 
-          <div class="project-actions" *ngIf="project.repo">
-            <a class="btn social-btn" target="_blank" [href]="project.repo">
+          <div class="project-actions" *ngIf="project.repo || project.demo">
+            <a class="btn social-btn" target="_blank" [href]="project.repo" *ngIf="project.repo">
               <i class="fab fa-github"></i> View Code
+            </a>
+            <a class="btn social-btn demo-btn" target="_blank" [href]="project.demo" *ngIf="project.demo">
+              <i class="fas fa-play"></i> View Demo
             </a>
           </div>
         </div>
@@ -262,8 +273,8 @@
     <div class="footer-socials">
       <a href="https://www.linkedin.com/in/raghuveer-draksharam/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       <a href="https://github.com/raghuveer88" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://www.instagram.com/raghuveerdraksharam/" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://leetcode.com/u/Raghuveer_Draksharam/" target="_blank"><i class="fas fa-code"></i></a>
+      <!-- <a href="https://www.instagram.com/raghuveerdraksharam/" target="_blank"><i class="fab fa-instagram"></i></a> -->
+      <!-- <a href="https://leetcode.com/u/Raghuveer_Draksharam/" target="_blank"><i class="fas fa-code"></i></a> -->
     </div>
   </div>
 </footer>
